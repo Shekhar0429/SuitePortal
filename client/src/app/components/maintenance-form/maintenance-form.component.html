@@ -1,0 +1,70 @@
+<div class="maintenance-form-container">
+  <h2>Submit a Maintenance Request</h2>
+  
+  <form [formGroup]="maintenanceForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">Name is required</div>
+        <div *ngIf="f.name.errors.maxlength">Name must be at most 100 characters long</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Please enter a valid email address</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="unitNumber">Unit Number</label>
+      <input type="text" id="unitNumber" formControlName="unitNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.unitNumber.errors }">
+      <div *ngIf="submitted && f.unitNumber.errors" class="invalid-feedback">
+        <div *ngIf="f.unitNumber.errors.required">Unit Number is required</div>
+        <div *ngIf="f.unitNumber.errors.maxlength">Unit Number must be at most 10 characters long</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="serviceType">Service Type</label>
+      <select id="serviceType" formControlName="serviceType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.serviceType.errors }">
+        <option value="">Select a service type</option>
+        <option *ngFor="let type of serviceTypes" [value]="type">{{type}}</option>
+      </select>
+      <div *ngIf="submitted && f.serviceType.errors" class="invalid-feedback">
+        <div *ngIf="f.serviceType.errors.required">Service Type is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="summary">Summary</label>
+      <input type="text" id="summary" formControlName="summary" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.summary.errors }">
+      <div *ngIf="submitted && f.summary.errors" class="invalid-feedback">
+        <div *ngIf="f.summary.errors.required">Summary is required</div>
+        <div *ngIf="f.summary.errors.maxlength">Summary must be at most 200 characters long</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="details">Details (Optional)</label>
+      <textarea id="details" formControlName="details" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.details.errors }"></textarea>
+      <div *ngIf="submitted && f.details.errors" class="invalid-feedback">
+        <div *ngIf="f.details.errors.maxlength">Details must be at most 1000 characters long</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Request</button>
+  </form>
+
+  <div *ngIf="submitSuccess" class="alert alert-success mt-3">
+    Your maintenance request has been submitted successfully!
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+</div>

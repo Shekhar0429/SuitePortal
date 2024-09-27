@@ -1,0 +1,46 @@
+<div class="admin-dashboard-container">
+  <h2>Admin Dashboard</h2>
+  
+  <div *ngIf="loading" class="loading-spinner">
+    Loading...
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!loading && !errorMessage">
+    <h3>Open Maintenance Requests</h3>
+    
+    <table class="maintenance-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Unit</th>
+          <th>Service Type</th>
+          <th>Summary</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of maintenanceRequests">
+          <td>{{ request.id }}</td>
+          <td>{{ request.name }}</td>
+          <td>{{ request.unitNumber }}</td>
+          <td>{{ request.serviceType }}</td>
+          <td>{{ request.summary }}</td>
+          <td>{{ request.createdAt | date:'short' }}</td>
+          <td>
+            <button (click)="closeRequest(request.id)" class="btn btn-success">Close</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="maintenanceRequests.length === 0" class="no-requests">
+      No open maintenance requests at this time.
+    </div>
+  </div>
+</div>

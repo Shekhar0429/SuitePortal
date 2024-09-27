@@ -1,0 +1,62 @@
+.admin-dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.maintenance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.maintenance-table th,
+.maintenance-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.maintenance-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.maintenance-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.no-requests {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #666;
+}

@@ -1,0 +1,33 @@
+{
+  "maintenanceRequests": [
+    {
+      "name": "ewgt",
+      "email": "admin@user.io",
+      "unitNumber": "wet",
+      "serviceType": "general",
+      "summary": "rw",
+      "details": "",
+      "id": "1727433749507",
+      "status": "closed",
+      "createdAt": "2024-09-27T10:42:29.507Z"
+    },
+    {
+      "name": "Eliana shesd Stout",
+      "email": "john@doe.io",
+      "unitNumber": "1001",
+      "serviceType": "pest-control",
+      "summary": "Pest bill check",
+      "details": "",
+      "id": "1727435424909",
+      "status": "closed",
+      "createdAt": "2024-09-27T11:10:24.909Z"
+    }
+  ],
+  "admins": [
+    {
+      "username": "Admin",
+      "password": "$2a$10$74ns8kHgIaWMumIStrg5o.r4beZQdxOTZWhxKjuLFWJnC3IbNnhJe",
+      "createdAt": "2024-09-27T10:52:25.740Z"
+    }
+  ]
+}
